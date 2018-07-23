@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-const read = (path) => JSON.parse(fs.readFileSync(path).toString())
+const parse = (path) => JSON.parse(fs.readFileSync(path, 'utf8'))
 
-const write = (path, obj) => fs.writeFileSync(path, JSON.stringify(obj))
+const format = (path, data) => fs.writeFileSync(path, JSON.stringify(data))
 
-module.exports = { read, write }
+module.exports = { parse, format }
